@@ -1,0 +1,5 @@
+- [x] تحديث `src/app/pages/MenuPage.tsx` ليكون عصري ومناسب الخلفية (Dark glass + gradient overlay)
+- [x] تحسين الهيدر (تباين أعلى + blur + border)
+- [x] تحديث Tabs (rounded + ألوان active)
+- [x] تحديث Cards (glass + نصوص فاتحة + حدود مناسبة)
+- [x] تشغيل/فحص سريع للتأكد من عدم كسر layout

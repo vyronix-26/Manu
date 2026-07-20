@@ -1,0 +1,110 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@layer base {
+  body {
+    font-family: 'Cairo', sans-serif !important;
+  }
+}
+
+/* ضع صورة الخلفية على html و body مع أهمية عالية لتفادي التجاوزات */
+html, body {
+  background-image: url('../img/p.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-color: transparent !important;
+}
+
+/* Force full-page wrappers to be transparent so the site background shows through */
+.min-h-screen {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+* {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+/* طبقات الخلفية (Modern) */
+#root {
+  min-height: 100vh;
+}
+
+/* الصفحة بشكل عام: خلفية ثابتة + Overlay خفيف لقراءة أفضل */
+.app-bg {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay فوق الخلفية (ألوان تناسب الخلفية - تركواز/أخضر مزرق) */
+.app-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 450px at 15% 15%, rgba(20, 184, 166, 0.26), transparent 58%),
+    radial-gradient(800px 380px at 85% 18%, rgba(34, 197, 94, 0.14), transparent 62%),
+    radial-gradient(700px 360px at 60% 85%, rgba(56, 189, 248, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(20, 184, 166, 0.22) 0%, rgba(56, 189, 248, 0.10) 45%, rgba(34, 197, 94, 0.12) 100%);
+  pointer-events: none;
+}
+
+/* تحسين الخلفية عبر طبقة ثانية خفيفة */
+.app-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 260px at 30% 50%, rgba(34, 211, 238, 0.10), transparent 60%),
+    linear-gradient(90deg, rgba(2, 6, 23, 0.12), rgba(2, 6, 23, 0.00) 45%, rgba(2, 6, 23, 0.10));
+  pointer-events: none;
+}
+
+
+/* محتوى الصفحة فوق الـ overlay */
+.app-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* أسطح حديثة للكروت */
+.app-surface {
+  /* ألوان مكملة لـ overlay والخلفية (تركواز/أخضر مزرق) */
+  background: rgba(8, 145, 118, 0.22);
+  border: 1px solid rgba(45, 212, 191, 0.32);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(94, 234, 212, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* تحسين تباين النص/الحدود داخل أصناف/كروت الـ Menu */
+.card {
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+/* Tabs list + triggers داخل Menu */
+[data-slot="tabs-list"],
+.bg-muted {
+  background: rgba(255, 255, 255, 0.10) !important;
+  border-color: rgba(45, 212, 191, 0.25) !important;
+}
+
+[data-slot="tabs-trigger"] {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-slot="tabs-trigger"][data-state="active"] {
+  background: rgba(20, 184, 166, 0.95) !important;
+  color: white !important;
+  border-color: rgba(20, 184, 166, 0.95) !important;
+}
+
+
+
