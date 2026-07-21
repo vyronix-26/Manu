@@ -84,7 +84,7 @@ export function MenuPage() {
                 {/* الصورة */}
                 <div className="w-full md:w-1/3 min-w-[200px] h-64 rounded-2xl overflow-hidden border border-white/[0.05]">
                   <img
-                    src="/img/5cb26d04-6fdb-47be-a30e-0bcf2adc6378.jpg"
+                    src="/img/5cb26d04-6fdb-47be-a30e-0bcf2adc6378 (1).jpg"
                     alt="عرض اليوم"
                     className="w-full h-full object-cover"
                   />
